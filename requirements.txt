@@ -1,0 +1,7 @@
+# AI: Seznam závislostí pro generátor QR kódů
+Flask>=3.0.0
+Flask-Login>=0.6.3
+Flask-WTF>=1.2.1
+qrcode>=7.4.2
+Pillow>=10.0.0
+Werkzeug>=3.0.0
