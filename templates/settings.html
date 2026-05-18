@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nastavení účtu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: radial-gradient(circle at 50% 50%, #111827 0%, #030712 100%);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 text-gray-100">
+    <div class="bg-gray-900/80 p-8 rounded-2xl shadow-[0_0_40px_rgba(239,68,68,0.15)] w-full max-w-md border border-red-500/30 backdrop-blur-md">
+        <h1 class="text-2xl font-bold tracking-wider text-center text-white uppercase mb-6">Nastavení účtu</h1>
+        
+        <div class="bg-red-950/40 border border-red-500/30 p-4 rounded-xl mb-6">
+            <h2 class="text-red-400 font-bold font-mono text-xs uppercase mb-2">Nebezpečná zóna</h2>
+            <p class="text-gray-400 text-xs font-mono leading-relaxed mb-4">Smazáním účtu dojde k nevratnému odstranění vašeho profilu a všech vygenerovaných QR kódů včetně souborů na serveru.</p>
+            
+            <form action="{{ url_for('delete_account') }}" method="post">
+                {{ form.csrf_token }}
+                <button type="submit" onclick="return confirm('⚠️ OPRAVDU CHCETE SMAZAT ÚČET? Tato akce je nevratná a smaže všechny vaše QR kódy!')" class="w-full bg-red-600 hover:bg-red-500 text-white font-mono text-xs font-bold py-2.5 px-4 rounded-lg tracking-widest uppercase transition shadow-[0_0_15px_rgba(239,68,68,0.3)]">
+                    Kompletně smazat můj účet a data
+                </button>
+            </form>
+        </div>
+        
+        <div class="text-center">
+            <a href="{{ url_for('index') }}" class="text-xs font-mono text-gray-500 hover:text-cyan-400 uppercase tracking-wider transition">&larr; Zpět na přehled</a>
+        </div>
+    </div>
+</body>
+</html>

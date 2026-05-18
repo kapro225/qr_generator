@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nastala chyba</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: radial-gradient(circle at 50% 50%, #111827 0%, #030712 100%);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 text-gray-100">
+    <div class="bg-gray-900/80 p-8 rounded-2xl shadow-[0_0_30px_rgba(239,68,68,0.3)] w-full max-w-md border border-red-500/40 text-center backdrop-blur-md">
+        <div class="w-16 h-16 bg-red-950/50 text-red-500 border border-red-500 flex items-center justify-center rounded-full mx-auto mb-4 animate-bounce shadow-[0_0_15px_rgba(239,68,68,0.4)]">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+            </svg>
+        </div>
+        <h1 class="text-lg font-black font-mono tracking-widest text-red-400 uppercase mb-2">Nastala chyba</h1>
+        <p class="text-gray-300 mb-6 text-xs font-mono bg-black/40 border border-gray-800 p-3 rounded-lg text-left break-words">{{ error }}</p>
+        
+        <a href="javascript:history.back()" class="inline-block bg-gray-950 hover:bg-gray-800 text-cyan-400 border border-cyan-500/30 px-6 py-2.5 rounded-xl text-xs font-mono font-bold uppercase tracking-widest transition">
+            Zpět
+        </a>
+    </div>
+</body>
+</html>
